@@ -1,5 +1,6 @@
 package com.devsuperior.controllers;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class OrderController {
 		public OrderController(OrderService orderService) {
 			this.orderService = orderService;
 			this.scanner = new Scanner(System.in);
+			this.scanner.useLocale(Locale.US);
 		}
 
 
@@ -43,7 +45,7 @@ public class OrderController {
 				System.out.print("\nDeseja continuar (S/n)?");
 				String continueOption = scanner.next();
 				
-				if(!continueOption.equalsIgnoreCase(continueOption)) {
+				if(!continueOption.equalsIgnoreCase("s")) {
 					break;
 				}
 				
